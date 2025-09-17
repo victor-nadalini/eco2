@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 import com.example.eco2.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Home() {
+fun Perfil() {
     var isToggledfav  by rememberSaveable { mutableStateOf(false) } // variavel is toggled armazenara o estado do botão inicialmente falso toggled significa alternado
     // testar se isToggled é uma variavel so de favoritos ou se pode ser usada em todos os icones
     var isTogglednews  by rememberSaveable { mutableStateOf(false) }
@@ -45,7 +45,7 @@ fun Home() {
         topBar = {
             TopAppBar(
                 title = {
-                    Text("Screen home")
+                    Text("Screen perfil")
                 }
             )
         },
@@ -115,7 +115,7 @@ fun Home() {
             }
 
 
-           }
+        }
         }
     ) { innerPadding ->
         Box(modifier = Modifier.padding(innerPadding)) {

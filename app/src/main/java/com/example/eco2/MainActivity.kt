@@ -25,6 +25,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -32,7 +33,11 @@ import androidx.navigation.Navigation
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.eco2.screens.Favorites
 import com.example.eco2.screens.Home
+import com.example.eco2.screens.News
+import com.example.eco2.screens.Perfil
+import com.example.eco2.screens.Save
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +49,18 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ){
+                    data class TopLevelRoute<T : Any>(val name: String, val route: T, val icon: ImageVector)
+
+                    val topLevelRoutes = listOf(
+                        TopLevelRoute("Home", Home(), Icons.),
+                        TopLevelRoute("Perfil", Perfil(), Icons.)
+                    )
+
                     Home() // chamando a tela home
+                    Perfil()
+                    Save()
+                    News()
+                    Favorites()
                 }
             }
         }
