@@ -32,9 +32,11 @@ class MainActivity : ComponentActivity() {
                 Surface ( // folha de definiçoes iniciais = folha em branco com configurações
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
+
                 ){
                     @Composable
                     fun Routes() {
+
                         val navController = rememberNavController()
 
                         Scaffold(
@@ -43,7 +45,7 @@ class MainActivity : ComponentActivity() {
                             paddingValues ->
                             NavHost(
                                 navController = navController,
-                                startDestination = "home_route", // the problem probality is here why the message "screen home" not view in display
+                                startDestination = "home_route",
                                 modifier = Modifier.padding(paddingValues)
                             ) {
                                 // here is a define a strings "home route" for "Home()"
@@ -55,9 +57,9 @@ class MainActivity : ComponentActivity() {
                             }
                         }
                     }
+                    Routes() // now code running and when open emulator the app crash
                 }
             }
         }
     }
 }
-
