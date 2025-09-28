@@ -8,13 +8,13 @@ plugins {
 
 android {
     namespace = "com.example.eco2"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.eco2"
         minSdk = 35
         //noinspection EditedTargetSdkVersion
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -40,7 +40,7 @@ android {
     buildFeatures {
         compose = true
     }
-    buildToolsVersion = "35.0.0"
+    buildToolsVersion = "36.0.0"
 }
 
 dependencies {
