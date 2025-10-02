@@ -14,10 +14,11 @@ import com.example.eco2.screens.News
 import com.example.eco2.screens.Perfil
 import com.example.eco2.screens.Save
 
+
 @Composable
 fun Routes() {
 
-    val navController = rememberNavController()
+    val navController = rememberNavController() //error is here possible is a dependency
 
     Scaffold(
         bottomBar = { Navigation(navController = navController,)}

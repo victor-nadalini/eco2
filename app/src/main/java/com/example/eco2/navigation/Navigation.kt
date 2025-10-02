@@ -40,7 +40,7 @@ fun Navigation(navController: NavController) {
                     val navBackStackEntry by navController.currentBackStackEntryAsState()
                     val currentDestination = navBackStackEntry?.destination
 
-                    AppScreen.forEach {
+                    topLevelRoutes.forEach {
                         topLevelRoute ->
                         val select = currentDestination?.hierarchy?.any {it.route == topLevelRoute.route} == true
                         IconButton(
