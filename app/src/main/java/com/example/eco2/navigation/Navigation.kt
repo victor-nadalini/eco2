@@ -24,6 +24,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.eco2.screens.Config
 import com.example.eco2.screens.Favorites
 import com.example.eco2.screens.Home
 import com.example.eco2.screens.News
@@ -65,7 +66,7 @@ fun Navigation() {
                                 painter = painterResource(topLevelRoute.icon),
                                 contentDescription = topLevelRoute.name,
                                 modifier = Modifier.size(30.dp),
-                                tint = if (select) Color.Unspecified else MaterialTheme.colorScheme.onBackground // provisors
+                                tint = if (select) Color.Unspecified else Color.Unspecified // provisors
                             )
                         }
                     }
@@ -80,11 +81,11 @@ fun Navigation() {
             modifier = Modifier.padding(innerPadding)
         ) {
             // here is a define a strings "home route" for "Home()"
-            composable("home_route") {Home()}
+            composable("home_route") { Home(onSettingsClick = { navController.navigate(SingleRoutes.Settings.route) })}
             composable("perfil_route") {Perfil()}
             composable("favorites_route") {Favorites()}
             composable("save_route") {Save()}
             composable("news_route") {News()}
-        }
-        }
+            composable(SingleRoutes.Settings.route) { Config() }        }
     }
+}

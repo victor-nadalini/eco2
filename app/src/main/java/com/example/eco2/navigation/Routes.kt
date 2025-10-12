@@ -2,6 +2,9 @@ package com.example.eco2.navigation
 
 import com.example.eco2.R
 data class TopLevelRoute<T : Any>(val name: String, val route: T, val icon: Int)
+sealed class SingleRoutes (val route: String) {
+    object Settings : SingleRoutes("config_route")
+}
 val topLevelRoutes = listOf(
     TopLevelRoute("Perfil", "perfil_route", R.drawable.perfil),
     TopLevelRoute("Favoritos", "favorites_route", R.drawable.favoritos),
