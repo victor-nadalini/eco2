@@ -1,4 +1,8 @@
 [versions]
+mapsCompose = "6.12.1"
+places = "5.0.0"
+playServicesMaps = "19.2.0"
+
 agp = "8.11.2"
 coreSplashscreen = "1.0.1"
 kotlin = "2.0.0"
@@ -34,6 +38,10 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 animated-vector-drawable = { group = "com.android.support", name = "animated-vector-drawable", version.ref = "animatedVectorDrawable" }
 androidx-navigation-compose-jvmstubs = { group = "androidx.navigation", name = "navigation-compose-jvmstubs", version.ref = "navigationComposeJvmstubs" }
 material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+
+maps-compose = { module = "com.google.maps.android:maps-compose", version.ref = "mapsCompose" }
+places = { module = "com.google.android.libraries.places:places", version.ref = "places" }
+play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMaps" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

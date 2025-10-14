@@ -86,6 +86,6 @@ fun Navigation() {
             composable("favorites_route") {Favorites()}
             composable("save_route") {Save()}
             composable("news_route") {News()}
-            composable(SingleRoutes.Settings.route) { Config() }        }
+            composable(SingleRoutes.Settings.route) { Config() }}
     }
 }

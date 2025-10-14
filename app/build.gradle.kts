@@ -1,6 +1,8 @@
 import org.gradle.kotlin.dsl.implementation
 
 
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -45,6 +47,11 @@ android {
 }
 
 dependencies {
+    implementation(libs.places)
+    implementation(libs.play.services.maps)
+
+    implementation(libs.maps.compose)
+
     implementation("androidx.compose.material:material-icons-extended:1.7.8")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
