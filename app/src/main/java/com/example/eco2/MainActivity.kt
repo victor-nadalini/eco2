@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.eco2.navigation.Navigation
 import com.example.eco2.screens.Home
+import com.example.eco2.viewmodel.MapViewModel
 
 
 class MainActivity : ComponentActivity() {

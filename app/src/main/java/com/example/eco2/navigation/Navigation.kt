@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -30,6 +31,7 @@ import com.example.eco2.screens.Home
 import com.example.eco2.screens.News
 import com.example.eco2.screens.Perfil
 import com.example.eco2.screens.Save
+import com.example.eco2.viewmodel.MapViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -81,7 +83,12 @@ fun Navigation() {
             modifier = Modifier.padding(innerPadding)
         ) {
             // here is a define a strings "home route" for "Home()"
-            composable("home_route") { Home(onSettingsClick = { navController.navigate(SingleRoutes.Settings.route) })}
+            composable("home_route") {
+                val mapViewModel: MapViewModel = viewModel()
+                Home(
+                    onSettingsClick = { navController.navigate(SingleRoutes.Settings.route) },
+                    mapViewModel = mapViewModel,
+                    ) }
             composable("perfil_route") {Perfil()}
             composable("favorites_route") {Favorites()}
             composable("save_route") {Save()}

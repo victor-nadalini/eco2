@@ -47,6 +47,10 @@ android {
 }
 
 dependencies {
+    implementation(libs.timber)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+
     implementation(libs.places)
     implementation(libs.play.services.maps)
 
