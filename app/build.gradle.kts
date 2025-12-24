@@ -10,6 +10,7 @@ plugins {
 }
 
 android {
+
     namespace = "com.example.eco2"
     compileSdk = 36
 
@@ -34,12 +35,13 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
+   kotlin {
+       jvmToolchain(17)
+   }
+
     buildFeatures {
         compose = true
     }
@@ -47,10 +49,10 @@ android {
 }
 
 dependencies {
-    implementation(libs.timber)
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
 
+    implementation(libs.timber)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0")
     implementation(libs.places)
     implementation(libs.play.services.maps)
 
@@ -66,6 +68,7 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation( "androidx.navigation:navigation-compose:2.9.5")
+    implementation(libs.androidx.games.activity)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
