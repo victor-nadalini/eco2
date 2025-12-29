@@ -1,7 +1,5 @@
 package com.example.eco2.components
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
@@ -18,7 +16,6 @@ import androidx.core.widget.addTextChangedListener
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.AutocompleteSessionToken
 import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest
-import timber.log.Timber
 
 @Composable
 fun Searchbar(
@@ -84,7 +81,7 @@ fun Searchbar(
                 }
                 setAdapter(autocompleteAdapter)
                 // set a item click listener to selection users
-                setOnItemClickListener { _, _, position, _ ->
+                setOnItemClickListener { parent, view, position, id ->
                     val selectedPlace = autocompleteAdapter.getItem(position) ?: return@setOnItemClickListener
                     onPlaceSelected(selectedPlace)
                 }

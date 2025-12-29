@@ -104,6 +104,15 @@ fun Home(onSettingsClick: () -> Unit, mapViewModel: MapViewModel) {
                     )
                     cameraPositionState.position = CameraPosition.fromLatLngZoom(it, 10f)
                 }
+                selectLocation?.let {
+                    Marker(
+                        state = MarkerState(position = it),
+                        title = "Localização selecionada",
+                        snippet = "Esse é o lugar que voce selecionou"
+                    )
+
+                    cameraPositionState.position = CameraPosition.fromLatLngZoom(it, 15f)
+                }
             }
 
             Column(modifier = Modifier.fillMaxSize()) {
@@ -114,16 +123,6 @@ fun Home(onSettingsClick: () -> Unit, mapViewModel: MapViewModel) {
                         mapViewModel.selectLocation(context, selectPlace) // error possible is here
                     },
                 )
-
-                selectLocation?.let {
-                    Marker(
-                        state = MarkerState(position = it),
-                        title = "Selected Location",
-                        snippet = "This is the place you selected."
-                    )
-
-                    cameraPositionState.position = CameraPosition.fromLatLngZoom(it, 15f)
-                }
            }
         }
     }
